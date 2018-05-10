@@ -1,0 +1,44 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+        ios::sync_with_stdio(false);
+        int n = 0, flag = 1, index = 0;
+	cin>>n;
+	string s = "";
+	cin>>s;
+	int present[26] = {0};
+	for(int i = 0; i < s.length(); i++)
+	{
+		if(s[i] >= 'a' && s[i] <= 'z')
+		{
+			index = s[i] - 'a';
+		}
+		else if(s[i] >= 'A' && s[i] <= 'Z')
+		{
+			index = s[i] - 'A';
+		}
+		present[index] = 1;
+	}
+	for(int j = 0; j < 26; j++)
+	{
+		if(present[j] == 0)
+		{
+			flag = 0;
+			break;
+		}
+		else
+		{
+			flag = 1;
+		}
+	}
+	if(flag == 1)
+	{
+		cout<<"YES"<<"\n";
+	}
+	else
+	{
+		cout<<"NO"<<"\n";
+	}
+	return 0;
+}
